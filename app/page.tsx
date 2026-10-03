@@ -1,6 +1,7 @@
 import { anchorId, Article } from "@/components/Article";
 import { Dots } from "@/components/Dots";
 import { EnquiryForm } from "@/components/EnquiryForm";
+import { Hero } from "@/components/Hero";
 import { Newsletter } from "@/components/Newsletter";
 import {
   aboutClosing,
@@ -25,20 +26,7 @@ export default function HomePage() {
   return (
     <main>
       <Dots />
-      <section className="hero" id="top">
-        <img
-          src="/images/eduvista-hero.jpg"
-          alt="A person on a ridge looking over forested hills in morning mist."
-          fetchPriority="high"
-        />
-        <div className="hero-copy">
-          <p className="hero-kicker">EduVista Global Network</p>
-          <h1>Expanding horizons, elevating futures</h1>
-          <a className="btn" href="#about">
-            Explore more
-          </a>
-        </div>
-      </section>
+      <Hero />
 
       <section className="stage" aria-label="Highlights">
         <div className="wrap">
