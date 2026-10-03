@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import { usePathname } from "next/navigation";
 
 const LINKS = [
-  { href: "/#top", label: "Home" },
   { href: "/#about", label: "About" },
   { href: "/#learners", label: "Learners" },
   { href: "/#institutions", label: "Institutions" },
@@ -13,11 +13,13 @@ const LINKS = [
 ];
 
 export function Header() {
-  const [solid, setSolid] = useState(false);
+  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const solid = open || scrolled || pathname !== "/";
 
   useEffect(() => {
-    const onScroll = () => setSolid(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -33,8 +35,11 @@ export function Header() {
   return (
     <header className={solid || open ? "header solid" : "header"}>
       <a className="logo" href="/#top">
-        <span className="mark" aria-hidden="true" />
-        EduVista
+        <img className="logo-mark" src="/images/logo-mark.png" alt="" />
+        <span className="logo-type">
+          EduVista
+          <small>Global Network</small>
+        </span>
       </a>
       <nav className="nav-links" aria-label="Primary">
         {LINKS.map((link) => (

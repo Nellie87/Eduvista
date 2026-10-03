@@ -1,4 +1,5 @@
 import { anchorId, Article } from "@/components/Article";
+import { Dots } from "@/components/Dots";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { Newsletter } from "@/components/Newsletter";
 import {
@@ -23,36 +24,87 @@ const institutionNav = [vision.title, consultancy.title, polls.title, market.tit
 export default function HomePage() {
   return (
     <main>
+      <Dots />
       <section className="hero" id="top">
         <img
-          src="/images/brand.png"
-          alt="EduVista Global Network. Expanding Horizons, Elevating Futures."
+          src="/images/eduvista-hero.jpg"
+          alt="A person on a ridge looking over forested hills in morning mist."
           fetchPriority="high"
         />
-      </section>
-
-      <section className="welcome wrap">
-        <h1>Welcome to EduVista Global Network</h1>
-        <p className="lead">
-          At EduVista, we don’t just support your goals — we <strong>INSPIRE</strong> transformation,
-          guide you through your personal <strong>MAP</strong> to success, and help you{" "}
-          <strong>RISE</strong> to your full potential.
-        </p>
-        <p>
-          We&apos;re a global academic and career empowerment hub delivering data-driven,
-          integrity-rooted, and innovation-led solutions that ensure every learner thrives.
-        </p>
-        <div className="actions">
-          <a className="btn" href="#learners">
-            For learners
-          </a>
-          <a className="btn ghost" href="#institutions">
-            For institutions
+        <div className="hero-copy">
+          <p className="hero-kicker">EduVista Global Network</p>
+          <h1>Expanding horizons, elevating futures</h1>
+          <a className="btn" href="#about">
+            Explore more
           </a>
         </div>
       </section>
 
-      <section id="about" className="panel">
+      <section className="stage" aria-label="Highlights">
+        <div className="wrap">
+          <article className="stage-row" id="about">
+            <div className="stage-copy">
+              <p className="eyebrow">About</p>
+              <h2>Crafting futures, cultivating excellence</h2>
+              <p>
+                At EduVista, the future is not a distant promise — it is an ecosystem we intentionally
+                cultivate through mentorship, research, and global opportunity.
+              </p>
+              <a className="more" href="#about-detail">
+                Read more
+              </a>
+            </div>
+            <figure className="stage-visual">
+              <img
+                src="/images/eduvista-about.jpg"
+                alt="Young green shoots rising from dark soil at dawn."
+              />
+            </figure>
+          </article>
+
+          <article className="stage-row flip">
+            <div className="stage-copy">
+              <p className="eyebrow">Learners</p>
+              <h2>Shape the path from first choice to graduation</h2>
+              <p>
+                Personalized, globally informed guidance from pre-university planning through
+                postgraduate excellence, so every learner gains admission and thrives.
+              </p>
+              <a className="more" href="#learners">
+                Read more
+              </a>
+            </div>
+            <figure className="stage-visual">
+              <img
+                src="/images/eduvista-pathway.jpg"
+                alt="A brass compass and a closed notebook on a wooden desk at dusk."
+              />
+            </figure>
+          </article>
+
+          <article className="stage-row">
+            <div className="stage-copy">
+              <p className="eyebrow">Institutions</p>
+              <h2>Lead with evidence, not guesswork</h2>
+              <p>
+                Research consultancy, polling, and market intelligence that connect decision-makers
+                with data and ambition with measurable impact.
+              </p>
+              <a className="more" href="#institutions">
+                Read more
+              </a>
+            </div>
+            <figure className="stage-visual">
+              <img
+                src="/images/eduvista-institutions.jpg"
+                alt="A stone university colonnade and ivy at dusk."
+              />
+            </figure>
+          </article>
+        </div>
+      </section>
+
+      <section id="about-detail" className="panel">
         <div className="wrap">
           <header className="chapter">
             <p className="eyebrow">About</p>
@@ -208,13 +260,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="letter-band" aria-labelledby="letter-title">
-        <div className="wrap letter">
+      <section className="closer" aria-labelledby="closer-title">
+        <div className="wrap closer-grid">
           <div>
-            <h2 id="letter-title">Join our mailing list</h2>
-            <p>Get 10% off your first purchase when you sign up for our newsletter.</p>
+            <h2 id="closer-title">Let’s rise together</h2>
+            <a className="btn" href="#contact">
+              Let’s go
+            </a>
           </div>
-          <Newsletter />
+          <div>
+            <p>
+              EduVista is a global academic and career empowerment hub. We inspire transformation,
+              map the path, and help every learner rise — from the first university choice to
+              institutional insight.
+            </p>
+            <div className="closer-letter">
+              <p className="eyebrow">Mailing list</p>
+              <p>Get 10% off your first purchase when you sign up for our newsletter.</p>
+              <Newsletter />
+            </div>
+          </div>
         </div>
       </section>
     </main>
