@@ -1,8 +1,8 @@
-import { anchorId, Article } from "@/components/Article";
 import { Dots } from "@/components/Dots";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { Hero } from "@/components/Hero";
 import { Newsletter } from "@/components/Newsletter";
+import { ServiceExplorer, type ExplorerItem } from "@/components/ServiceExplorer";
 import {
   aboutClosing,
   certification,
@@ -19,8 +19,17 @@ import {
 } from "@/lib/content";
 import { INBOX, WEB, WEB_LABEL, WHATSAPP } from "@/lib/site";
 
-const learnerNav = learners.map((service) => service.title).concat(certification.title);
-const institutionNav = [vision.title, consultancy.title, polls.title, market.title];
+const learnerItems: ExplorerItem[] = [
+  ...learners,
+  {
+    eyebrow: certification.eyebrow,
+    title: certification.title,
+    lede: certification.lede,
+    rows: certification.rows,
+  },
+];
+
+const institutionItems: ExplorerItem[] = [vision, consultancy, polls, market];
 
 export default function HomePage() {
   return (
@@ -106,23 +115,26 @@ export default function HomePage() {
               </article>
             ))}
           </div>
-          <div className="reading">
-            <h2>Crafting futures, cultivating excellence</h2>
-            <p>{crafting}</p>
-            <p>Our vision of the future is rooted in three powerful commitments:</p>
-          </div>
-          <div className="commitments">
-            {commitments.map((item) => (
-              <p className="commitment" key={item.lead}>
-                <strong>{item.lead}</strong>
-                {item.rest}
-              </p>
-            ))}
-          </div>
-          <div className="reading closing-block">
-            {aboutClosing.map((line) => (
-              <p key={line}>{line}</p>
-            ))}
+          <div className="story">
+            <div className="story-lead">
+              <h3>Crafting futures, cultivating excellence</h3>
+              <p>{crafting}</p>
+            </div>
+            <p className="story-kicker">Three commitments</p>
+            <ol className="commitments">
+              {commitments.map((item, index) => (
+                <li className="commitment" key={item.lead}>
+                  <span className="commitment-num">{String(index + 1).padStart(2, "0")}</span>
+                  <h3>{item.lead}</h3>
+                  <p>{item.rest}</p>
+                </li>
+              ))}
+            </ol>
+            <div className="story-close">
+              {aboutClosing.map((line) => (
+                <p key={line}>{line}</p>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -132,43 +144,12 @@ export default function HomePage() {
           <header className="chapter">
             <p className="eyebrow">Learners</p>
             <h2>Core services: talent empowerment and academic excellence</h2>
+            <p className="chapter-note">
+              Six services, from first university choice through certification. Open one to see who it
+              is for and what it includes.
+            </p>
           </header>
-          <nav className="toc" aria-label="Learner services">
-            {learnerNav.map((title) => (
-              <a key={title} href={`#${anchorId(title)}`}>
-                {title}
-              </a>
-            ))}
-          </nav>
-          {learners.map((service) => (
-            <Article key={service.title} article={service} />
-          ))}
-          <article className="service" id={anchorId(certification.title)}>
-            <p className="eyebrow">{certification.eyebrow}</p>
-            <h3>{certification.title}</h3>
-            {certification.lede.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-            <p>Globally recognized examples:</p>
-            <div className="table-wrap">
-              <table className="cred">
-                <thead>
-                  <tr>
-                    <th scope="col">Field</th>
-                    <th scope="col">Credentials</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {certification.rows.map(([field, credentials]) => (
-                    <tr key={field}>
-                      <td>{field}</td>
-                      <td>{credentials}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </article>
+          <ServiceExplorer label="Learner services" items={learnerItems} />
         </div>
       </section>
 
@@ -177,18 +158,12 @@ export default function HomePage() {
           <header className="chapter">
             <p className="eyebrow">Institutions</p>
             <h2>Core services: organizational insight and strategic research</h2>
+            <p className="chapter-note">
+              Four ways institutions use EduVista. Open one to see the evidence, the method, and the
+              outcome.
+            </p>
           </header>
-          <nav className="toc" aria-label="Institution services">
-            {institutionNav.map((title) => (
-              <a key={title} href={`#${anchorId(title)}`}>
-                {title}
-              </a>
-            ))}
-          </nav>
-          <Article article={vision} />
-          <Article article={consultancy} />
-          <Article article={polls} />
-          <Article article={market} />
+          <ServiceExplorer label="Institution services" items={institutionItems} />
         </div>
       </section>
 
