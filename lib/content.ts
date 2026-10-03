@@ -24,6 +24,24 @@ export const about: Service = {
   ],
 };
 
+export const statements = [
+  {
+    title: "Mission",
+    body: "To deliver data-driven academic and career solutions that inspire success, ensure timely graduation, and unlock global opportunities.",
+  },
+  {
+    title: "Vision",
+    body: "To be the leading global force in academic and career empowerment through excellence, innovation, and lifelong impact.",
+  },
+  {
+    title: "Approach",
+    body: "We offer tailored, data-informed solutions driven by integrity, innovation, and a commitment to global excellence — ensuring every learner thrives and every outcome counts.",
+  },
+];
+
+export const crafting =
+  "At EduVista, the future is not a distant promise — it is an ecosystem we intentionally cultivate through mentorship, research, and global opportunity. We believe that excellence is not a destination but a dynamic continuum, powered by purpose and precision.";
+
 export const commitments = [
   {
     lead: "Empowering",
@@ -103,7 +121,7 @@ export const learners: Service[] = [
     alt: "An open manuscript with a fountain pen in warm lamplight.",
     lede: [
       "At EduVista, we champion postgraduate success by nurturing a culture of research excellence, innovation, and global scholarly contribution. Our holistic research mentorship empowers master’s and doctoral candidates to confidently navigate the entire academic journey — from coursework mastery to impactful publication — while building the competencies required to lead in academia, policy, and industry.",
-      "Research mentorship and academic development is structured, personal support so postgraduate students can produce world-class research outputs and excel in their programs.",
+      "We provide structured and personalized support that enables postgraduate students to develop world-class research outputs and excel in their academic programs.",
     ],
     points: [
       {
@@ -165,7 +183,7 @@ export const learners: Service[] = [
     lede: [
       "EduVista empowers graduates and professionals to confidently navigate international career landscapes by equipping them with competitive employability skills, strategic job placement support, and access to globally recognized professional certifications.",
       "The approach transforms ambition into action — ensuring learners are not only ready for the job market but positioned to thrive in high-demand, high-impact global roles.",
-      "Employability coaching and global job readiness:",
+      "We offer a suite of services designed to enhance your career prospects locally and internationally.",
     ],
     points: [
       {

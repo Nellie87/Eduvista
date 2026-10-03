@@ -44,7 +44,7 @@ export function Header() {
         ))}
       </nav>
       <div className="header-right">
-        <a className="btn header-btn" href="/#enquire">
+        <a className="btn header-btn" href="/#contact">
           Enquire
         </a>
         <button
@@ -66,7 +66,7 @@ export function Header() {
                 {link.label}
               </a>
             ))}
-            <a className="btn" href="/#enquire" onClick={() => setOpen(false)}>
+            <a className="btn" href="/#contact" onClick={() => setOpen(false)}>
               Enquire
             </a>
           </nav>,

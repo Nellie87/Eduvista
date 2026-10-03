@@ -1,16 +1,10 @@
-import type { Metadata } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Open_Sans } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import "./globals.css";
 
-const serif = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-serif",
-  display: "swap",
-});
-
-const sans = Manrope({
+const sans = Open_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
@@ -22,12 +16,16 @@ export const metadata: Metadata = {
     template: "%s · EduVista Global Network",
   },
   description:
-    "Welcome to EduVista Global Network. A global academic and career empowerment hub delivering data-driven, integrity-rooted, and innovation-led solutions.",
+    "EduVista Global Network empowers learners through academic and career solutions, from pre-university planning to postgraduate research and institutional insight.",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#022635",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${serif.variable} ${sans.variable}`}>
+    <html lang="en" className={sans.variable}>
       <body>
         <a className="skip" href="#content">
           Skip to content
