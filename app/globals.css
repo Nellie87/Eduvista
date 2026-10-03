@@ -327,8 +327,8 @@ h1, h2, h3 {
 }
 
 .stage {
-  background: var(--teal);
-  color: #f7f4ea;
+  background: var(--paper);
+  color: var(--ink);
   padding: 28px 0 12px;
 }
 
@@ -347,11 +347,9 @@ h1, h2, h3 {
 .stage-row.flip .stage-copy { order: 2; }
 .stage-row.flip .stage-visual { order: 1; }
 
-.stage .eyebrow { color: var(--gold); }
-
 .stage h2 {
   margin: 0 0 14px;
-  color: white;
+  color: var(--teal);
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   max-width: 14em;
 }
@@ -359,7 +357,7 @@ h1, h2, h3 {
 .stage-copy p {
   margin: 0 0 18px;
   max-width: 38ch;
-  color: rgba(247, 244, 234, 0.82);
+  color: var(--muted);
 }
 
 .stage-visual { margin: 0; }
