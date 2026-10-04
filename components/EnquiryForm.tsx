@@ -72,9 +72,7 @@ export function EnquiryForm() {
         </ul>
       )}
       <p className="hint">
-        Thank you for considering us for your family&apos;s educational needs. When you fill out the
-        appointment request form, please be sure to upload the form you filled out for the current
-        school year. File names are listed in the draft. You attach the files in your email app.
+        File names appear in the draft. Attach the files in your email app before you send.
       </p>
       <button className="btn" type="submit">
         Open email draft

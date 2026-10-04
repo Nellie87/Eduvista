@@ -44,8 +44,8 @@ export default function HomePage() {
               <p className="eyebrow">About</p>
               <h2>Crafting futures, cultivating excellence</h2>
               <p>
-                At EduVista, the future is not a distant promise — it is an ecosystem we intentionally
-                cultivate through mentorship, research, and global opportunity.
+                Mentorship, research, and global opportunity — excellence as a practice, not a
+                destination.
               </p>
               <a className="more" href="#about-detail">
                 Read more
@@ -131,9 +131,7 @@ export default function HomePage() {
               ))}
             </ol>
             <div className="story-close">
-              {aboutClosing.map((line) => (
-                <p key={line}>{line}</p>
-              ))}
+              <p>{aboutClosing}</p>
             </div>
           </div>
         </div>
@@ -143,11 +141,8 @@ export default function HomePage() {
         <div className="wrap">
           <header className="chapter">
             <p className="eyebrow">Learners</p>
-            <h2>Core services: talent empowerment and academic excellence</h2>
-            <p className="chapter-note">
-              Six services, from first university choice through certification. Open one to see who it
-              is for and what it includes.
-            </p>
+            <h2>Services for learners</h2>
+            <p className="chapter-note">From first university choice through certification.</p>
           </header>
           <ServiceExplorer label="Learner services" items={learnerItems} />
         </div>
@@ -157,11 +152,8 @@ export default function HomePage() {
         <div className="wrap">
           <header className="chapter">
             <p className="eyebrow">Institutions</p>
-            <h2>Core services: organizational insight and strategic research</h2>
-            <p className="chapter-note">
-              Four ways institutions use EduVista. Open one to see the evidence, the method, and the
-              outcome.
-            </p>
+            <h2>Services for institutions</h2>
+            <p className="chapter-note">Research, polling, and market intelligence.</p>
           </header>
           <ServiceExplorer label="Institution services" items={institutionItems} />
         </div>
@@ -171,7 +163,7 @@ export default function HomePage() {
         <div className="wrap">
           <header className="chapter">
             <p className="eyebrow">Gallery</p>
-            <h2>Explore our vibrant learning moments gallery</h2>
+            <h2>Learning moments</h2>
           </header>
           <div className="film">
             {moments.map((moment) => (
@@ -233,9 +225,8 @@ export default function HomePage() {
           </div>
           <div>
             <p>
-              EduVista is a global academic and career empowerment hub. We inspire transformation,
-              map the path, and help every learner rise — from the first university choice to
-              institutional insight.
+              Academic and career guidance from the first university choice through institutional
+              research.
             </p>
             <div className="closer-letter">
               <p className="eyebrow">Mailing list</p>
