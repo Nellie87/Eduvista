@@ -14,7 +14,7 @@ export const about: Service = {
   eyebrow: "About",
   title: "Crafting futures, cultivating excellence",
   image: "/images/eduvista-about.jpg",
-  alt: "Young green shoots rising from dark soil at dawn.",
+  alt: "People working together around laptops in a mentoring session.",
   lede: [
     "A global academic and career hub: data-driven, integrity-rooted work so every learner thrives.",
   ],
@@ -61,7 +61,7 @@ export const learners: Service[] = [
     eyebrow: "Academic pathway",
     title: "Advisory and excellence support",
     image: "/images/eduvista-pathway.jpg",
-    alt: "A brass compass and a closed notebook on a wooden desk at dusk.",
+    alt: "Students collaborating over laptops in a university library.",
     lede: [
       "Guidance from first university choice through postgraduate placement, so students choose well and complete well.",
     ],
@@ -88,7 +88,7 @@ export const learners: Service[] = [
     eyebrow: "STEM",
     title: "Academic mastery tutorials",
     image: "/images/eduvista-stem.jpg",
-    alt: "Pencils, a glass sphere, and a planted beaker on a quiet study table.",
+    alt: "A student in a lab coat holding a flask beside a microscope.",
     lede: [
       "STEM tutorials that close gaps, build confidence, and keep students on track.",
     ],
@@ -111,7 +111,7 @@ export const learners: Service[] = [
     eyebrow: "Research",
     title: "Postgraduate research excellence",
     image: "/images/eduvista-research.jpg",
-    alt: "An open manuscript with a fountain pen in warm lamplight.",
+    alt: "A postgraduate student focused on a laptop in a study hall.",
     lede: [
       "Mentorship for master’s and doctoral candidates, from coursework through publication.",
     ],
@@ -138,7 +138,7 @@ export const learners: Service[] = [
     eyebrow: "Coaching",
     title: "Academic coaching",
     image: "/images/eduvista-coaching.jpg",
-    alt: "Two people seated in a library, seen from behind, facing a bright window.",
+    alt: "A small group talking through notes over coffee.",
     lede: [
       "Personal coaching so students set goals, study well, and work through what stalls progress.",
     ],
@@ -169,7 +169,7 @@ export const learners: Service[] = [
     eyebrow: "Careers",
     title: "Career preparedness",
     image: "/images/eduvista-career.jpg",
-    alt: "Two empty oak chairs in a calm interview room with warm window light.",
+    alt: "A diverse team shaking hands after a meeting.",
     lede: [
       "Employability skills and placement support for local and international roles.",
     ],
@@ -193,6 +193,8 @@ export const learners: Service[] = [
 export const certification = {
   eyebrow: "Credentials",
   title: "Professional certification",
+  image: "/images/eduvista-cert.jpg",
+  alt: "Graduates throwing caps into the air.",
   lede: [
     "High-impact certifications matched to career goals, with support through enrolment and preparation.",
   ],
@@ -213,7 +215,7 @@ export const vision: Service = {
   eyebrow: "Institutions",
   title: "Vision through data",
   image: "/images/eduvista-institutions.jpg",
-  alt: "A stone university colonnade and ivy at dusk.",
+  alt: "A university campus building across a green lawn.",
   lede: [
     "Research consultancy, polling, and market intelligence so institutions lead with evidence, not guesswork.",
   ],
@@ -223,7 +225,7 @@ export const consultancy: Service = {
   eyebrow: "Evidence",
   title: "Research consultancy",
   image: "/images/eduvista-field.jpg",
-  alt: "Blank clipboards and a brass survey marker on an outdoor table at dusk.",
+  alt: "A facilitator leading a workshop with notes on the wall.",
   lede: [
     "Programme audits, policy studies, and MEL systems for universities, government, and donor-funded work.",
   ],
@@ -250,6 +252,8 @@ export const consultancy: Service = {
 export const polls = {
   eyebrow: "Public voice",
   title: "Polls and public engagement",
+  image: "/images/eduvista-polls.jpg",
+  alt: "Two colleagues in a research interview at a conference table.",
   lede: [
     "Ethical, statistically robust surveys for political strategy, civic engagement, and service delivery.",
   ],
@@ -277,7 +281,7 @@ export const market: Service = {
   eyebrow: "Markets",
   title: "Market research and quality",
   image: "/images/eduvista-market.jpg",
-  alt: "A wax seal, linen ribbon, and a cream folder on dark green marble.",
+  alt: "A laptop showing charts and market dashboards.",
   lede: [
     "Market, brand, and quality work so organisations enter markets, measure trust, and meet accreditation standards.",
   ],
@@ -304,33 +308,33 @@ export const market: Service = {
 export const moments = [
   {
     src: "/images/moment-map.jpg",
-    title: "A first university map",
-    alt: "Ink and watercolor drawing of a campus on a folded map, with a gold path and a compass.",
+    title: "A first campus library",
+    alt: "A student walking between library shelves.",
   },
   {
     src: "/images/moment-stem.jpg",
-    title: "A STEM problem",
-    alt: "Ink and watercolor still life of a sphere, a triangle, and a plant in a beaker.",
+    title: "A STEM lab",
+    alt: "Beakers and a pipette on a laboratory bench.",
   },
   {
     src: "/images/moment-thesis.jpg",
-    title: "A thesis margin",
-    alt: "Ink and watercolor drawing of an open thesis with a gold mark in the margin.",
+    title: "A thesis draft",
+    alt: "A student writing notes by hand beside a notebook.",
   },
   {
     src: "/images/moment-interview.jpg",
     title: "A mock interview",
-    alt: "Ink and watercolor drawing of two people seated across a small table.",
+    alt: "A team smiling and shaking hands around a meeting table.",
   },
   {
     src: "/images/moment-survey.jpg",
-    title: "A field survey",
-    alt: "Ink and watercolor drawing of two figures with a clipboard on a green hillside.",
+    title: "A field briefing",
+    alt: "People taking notes together at a wooden table.",
   },
   {
     src: "/images/moment-seal.jpg",
-    title: "A quality seal",
-    alt: "Ink and watercolor medallion with a laurel wreath and a check mark.",
+    title: "Graduation day",
+    alt: "Graduates throwing caps into a blue sky.",
   },
 ];
 

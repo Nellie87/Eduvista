@@ -25,6 +25,8 @@ const learnerItems: ExplorerItem[] = [
     eyebrow: certification.eyebrow,
     title: certification.title,
     lede: certification.lede,
+    image: certification.image,
+    alt: certification.alt,
     rows: certification.rows,
   },
 ];
@@ -54,7 +56,7 @@ export default function HomePage() {
             <figure className="stage-visual">
               <img
                 src="/images/eduvista-about.jpg"
-                alt="Young green shoots rising from dark soil at dawn."
+                alt="A mentor and students working together at a table."
               />
             </figure>
           </article>
@@ -74,7 +76,7 @@ export default function HomePage() {
             <figure className="stage-visual">
               <img
                 src="/images/eduvista-pathway.jpg"
-                alt="A brass compass and a closed notebook on a wooden desk at dusk."
+                alt="Students collaborating over laptops in a university library."
               />
             </figure>
           </article>
@@ -94,7 +96,7 @@ export default function HomePage() {
             <figure className="stage-visual">
               <img
                 src="/images/eduvista-institutions.jpg"
-                alt="A stone university colonnade and ivy at dusk."
+                alt="A university campus building and lawn."
               />
             </figure>
           </article>

@@ -291,8 +291,8 @@ h1, h2, h3 {
   height: 100%;
   max-width: none;
   object-fit: cover;
-  object-position: 28% 70%;
-  transform-origin: 24% 78%;
+  object-position: center 42%;
+  transform-origin: center center;
   animation: hero-drift 32s ease-in-out infinite alternate;
 }
 
@@ -301,8 +301,8 @@ h1, h2, h3 {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(2, 38, 53, 0.05) 0%, rgba(2, 38, 53, 0.12) 34%, rgba(2, 38, 53, 0.72) 62%, rgba(2, 38, 53, 0.9) 100%),
-    linear-gradient(180deg, rgba(2, 38, 53, 0.62) 0%, transparent 22%, transparent 78%, rgba(2, 38, 53, 0.35) 100%);
+    linear-gradient(90deg, rgba(2, 38, 53, 0.28) 0%, rgba(2, 38, 53, 0.22) 38%, rgba(2, 38, 53, 0.78) 64%, rgba(2, 38, 53, 0.92) 100%),
+    linear-gradient(180deg, rgba(2, 38, 53, 0.55) 0%, transparent 24%, transparent 78%, rgba(2, 38, 53, 0.4) 100%);
 }
 
 .hero-copy {
@@ -1087,7 +1087,7 @@ h1, h2, h3 {
     justify-items: center;
     min-height: 100svh;
   }
-  .hero img { object-position: center 60%; }
+  .hero img { object-position: center 38%; }
   .hero::after {
     background:
       linear-gradient(180deg, rgba(2, 38, 53, 0.62) 0%, rgba(2, 38, 53, 0.28) 36%, rgba(2, 38, 53, 0.55) 100%);
