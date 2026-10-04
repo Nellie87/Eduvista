@@ -12,7 +12,6 @@ import {
   hours,
   learners,
   market,
-  moments,
   polls,
   statements,
   vision,
@@ -158,23 +157,6 @@ export default function HomePage() {
             <p className="chapter-note">Research, polling, and market intelligence.</p>
           </header>
           <ServiceExplorer label="Institution services" items={institutionItems} />
-        </div>
-      </section>
-
-      <section id="moments">
-        <div className="wrap">
-          <header className="chapter">
-            <p className="eyebrow">Gallery</p>
-            <h2>Learning moments</h2>
-          </header>
-          <div className="film">
-            {moments.map((moment) => (
-              <figure key={moment.title}>
-                <img src={moment.src} alt={moment.alt} loading="lazy" decoding="async" />
-                <figcaption>{moment.title}</figcaption>
-              </figure>
-            ))}
-          </div>
         </div>
       </section>
 

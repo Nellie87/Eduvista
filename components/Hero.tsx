@@ -34,7 +34,7 @@ export function Hero() {
     <section className="hero" id="top">
       <img
         src="/images/eduvista-hero.jpg"
-        alt="Students walking toward a university building."
+        alt="Earth at night, city lights tracing the curve of the horizon."
         fetchPriority="high"
       />
       <div className="hero-copy">

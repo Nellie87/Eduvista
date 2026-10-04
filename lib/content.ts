@@ -305,39 +305,6 @@ export const market: Service = {
   ],
 };
 
-export const moments = [
-  {
-    src: "/images/moment-map.jpg",
-    title: "A first campus library",
-    alt: "A student walking between library shelves.",
-  },
-  {
-    src: "/images/moment-stem.jpg",
-    title: "A STEM lab",
-    alt: "Beakers and a pipette on a laboratory bench.",
-  },
-  {
-    src: "/images/moment-thesis.jpg",
-    title: "A thesis draft",
-    alt: "A student writing notes by hand beside a notebook.",
-  },
-  {
-    src: "/images/moment-interview.jpg",
-    title: "A mock interview",
-    alt: "A team smiling and shaking hands around a meeting table.",
-  },
-  {
-    src: "/images/moment-survey.jpg",
-    title: "A field briefing",
-    alt: "People taking notes together at a wooden table.",
-  },
-  {
-    src: "/images/moment-seal.jpg",
-    title: "Graduation day",
-    alt: "Graduates throwing caps into a blue sky.",
-  },
-];
-
 export const hours = [
   ["Monday", "09:00 am – 05:00 pm"],
   ["Tuesday", "09:00 am – 05:00 pm"],

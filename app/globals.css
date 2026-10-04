@@ -69,7 +69,7 @@ button, input, textarea, select { font: inherit; color: inherit; }
 
 .skip:focus { top: 12px; }
 
-#top, #about, #about-detail, #learners, #institutions, #moments, #contact, #enquire, .service {
+#top, #about, #about-detail, #learners, #institutions, #contact, #enquire, .service {
   scroll-margin-top: 96px;
 }
 
@@ -291,7 +291,7 @@ h1, h2, h3 {
   height: 100%;
   max-width: none;
   object-fit: cover;
-  object-position: center 42%;
+  object-position: center 62%;
   transform-origin: center center;
   animation: hero-drift 32s ease-in-out infinite alternate;
 }
@@ -301,8 +301,8 @@ h1, h2, h3 {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(2, 38, 53, 0.28) 0%, rgba(2, 38, 53, 0.22) 38%, rgba(2, 38, 53, 0.78) 64%, rgba(2, 38, 53, 0.92) 100%),
-    linear-gradient(180deg, rgba(2, 38, 53, 0.55) 0%, transparent 24%, transparent 78%, rgba(2, 38, 53, 0.4) 100%);
+    linear-gradient(90deg, rgba(2, 38, 53, 0.12) 0%, rgba(2, 38, 53, 0.18) 36%, rgba(2, 38, 53, 0.72) 62%, rgba(2, 38, 53, 0.9) 100%),
+    linear-gradient(180deg, rgba(2, 38, 53, 0.5) 0%, transparent 22%, transparent 76%, rgba(2, 38, 53, 0.45) 100%);
 }
 
 .hero-copy {
@@ -675,19 +675,34 @@ h1, h2, h3 {
   margin: 28px 0 8px;
 }
 
-.explorer-index {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.explorer-rail {
   position: sticky;
   top: 96px;
 }
 
+.explorer-cue {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 2px 10px;
+  color: var(--gold-deep);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.explorer-index {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .explorer-index button {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: auto minmax(0, 1fr) auto;
   gap: 12px;
-  align-items: start;
+  align-items: center;
   width: 100%;
   text-align: left;
   background: white;
@@ -698,10 +713,28 @@ h1, h2, h3 {
   cursor: pointer;
 }
 
+.explorer-index button:hover,
+.explorer-index button:focus-visible {
+  border-color: var(--gold);
+  background: #fff8ea;
+}
+
 .explorer-index button[aria-selected="true"] {
   border-color: var(--gold);
   background: #fff8ea;
   box-shadow: inset 3px 0 0 var(--gold);
+}
+
+.explorer-go {
+  display: grid;
+  place-items: center;
+  color: var(--gold-deep);
+  transition: transform 160ms ease;
+}
+
+.explorer-index button:hover .explorer-go,
+.explorer-index button:focus-visible .explorer-go {
+  transform: translateX(3px);
 }
 
 .explorer-num {
@@ -794,6 +827,64 @@ h1, h2, h3 {
   margin-top: 14px;
   font-weight: 700;
   color: var(--teal);
+}
+
+.explorer-step {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.explorer-step button {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-start;
+  text-align: left;
+  background: var(--wash);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 14px;
+  color: var(--teal);
+  cursor: pointer;
+}
+
+.explorer-step button:hover,
+.explorer-step button:focus-visible {
+  border-color: var(--gold);
+  background: #fff8ea;
+}
+
+.explorer-step .explorer-next {
+  align-items: flex-end;
+  text-align: right;
+  background: var(--teal);
+  border-color: var(--teal);
+  color: white;
+}
+
+.explorer-step .explorer-next:hover,
+.explorer-step .explorer-next:focus-visible {
+  background: var(--teal-mid);
+  border-color: var(--gold);
+}
+
+.explorer-step span {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.explorer-step .explorer-next span { color: var(--gold); }
+
+.explorer-step strong {
+  font-size: 0.95rem;
+  line-height: 1.35;
 }
 
 .toc {
@@ -894,36 +985,6 @@ h1, h2, h3 {
 
 #learners { padding-bottom: 64px; }
 #institutions { padding-bottom: 48px; }
-#moments { padding-bottom: 64px; }
-
-.film {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin: 28px 0 12px;
-}
-
-.film figure {
-  margin: 0;
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-.film img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  background: #f6f1e6;
-}
-
-.film figcaption {
-  padding: 10px 12px 12px;
-  font-size: 0.92rem;
-  font-weight: 650;
-  color: var(--teal);
-}
 
 .enquire {
   display: grid;
@@ -1087,10 +1148,10 @@ h1, h2, h3 {
     justify-items: center;
     min-height: 100svh;
   }
-  .hero img { object-position: center 38%; }
+  .hero img { object-position: center 58%; }
   .hero::after {
     background:
-      linear-gradient(180deg, rgba(2, 38, 53, 0.62) 0%, rgba(2, 38, 53, 0.28) 36%, rgba(2, 38, 53, 0.55) 100%);
+      linear-gradient(180deg, rgba(2, 38, 53, 0.62) 0%, rgba(2, 38, 53, 0.42) 34%, rgba(2, 38, 53, 0.62) 100%);
   }
   .hero-copy {
     width: min(520px, calc(100% - 36px));
@@ -1113,12 +1174,11 @@ h1, h2, h3 {
   .stage-visual img { height: 240px; border-radius: 28px; }
   .stage-row:nth-child(2) .stage-visual img,
   .stage-row:nth-child(3) .stage-visual img { border-radius: 28px; }
-  .film { grid-template-columns: 1fr 1fr; }
   .dots { display: none; }
   .wrap { width: min(1080px, calc(100% - 32px)); }
   .explorer { grid-template-columns: 1fr; }
+  .explorer-rail { position: static; }
   .explorer-index {
-    position: static;
     flex-direction: row;
     overflow-x: auto;
     overscroll-behavior-x: contain;
@@ -1142,13 +1202,12 @@ h1, h2, h3 {
 }
 
 @media (max-width: 640px) {
-  .film { grid-template-columns: 1fr; }
   .welcome { padding-top: 36px; }
   .chapter { padding-top: 40px; }
   .story { padding-bottom: 48px; }
   .hero-copy h1 { font-size: clamp(2.15rem, 11vw, 2.8rem); }
   .hero-line { min-height: 4.6em; }
-  .enquire, #learners, #moments { padding-bottom: 40px; }
+  .enquire, #learners { padding-bottom: 40px; }
   .explorer-panel { padding: 16px 14px 20px; }
   .explorer-visual img { height: 160px; }
   .menu { padding: 96px 24px 36px; }
@@ -1167,4 +1226,5 @@ h1, h2, h3 {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hero img, .hero-copy h1 span { animation: none; }
+  .explorer-go { transition: none; }
 }
