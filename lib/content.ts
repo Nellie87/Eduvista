@@ -47,7 +47,7 @@ export type Service = {
 };
 
 export const about: Service = {
-  eyebrow: "About",
+  eyebrow: "Purpose",
   title: "Crafting futures, cultivating excellence",
   image: "/images/eduvista-about.jpg",
   alt: "Curved library shelves filled with books.",

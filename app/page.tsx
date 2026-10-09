@@ -1,7 +1,6 @@
 import { Dots } from "@/components/Dots";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { Hero } from "@/components/Hero";
-import { Newsletter } from "@/components/Newsletter";
 import { ServiceCards } from "@/components/ServiceCards";
 import {
   aboutClosing,
@@ -12,24 +11,23 @@ import {
   vision,
 } from "@/lib/content";
 import { institutionServices, learnerServices } from "@/lib/services";
-import { INBOX, WEB, WEB_LABEL, WHATSAPP } from "@/lib/site";
 
 export default function HomePage() {
   return (
     <main>
       <Dots />
       <Hero />
-      <section className="stage" aria-label="Highlights">
+      <section className="stage" id="highlights" aria-label="Highlights">
         <div className="wrap">
-          <article className="stage-row" id="about">
+          <article className="stage-row">
             <div className="stage-copy">
-              <p className="eyebrow">About</p>
+              <p className="eyebrow">Purpose</p>
               <h2>Crafting futures, cultivating excellence</h2>
               <p>
                 Mentorship, research, and global opportunity - excellence as a practice, not a
                 destination.
               </p>
-              <a className="more" href="#about-detail">
+              <a className="more" href="#about">
                 Read more
               </a>
             </div>
@@ -83,15 +81,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="about-detail" className="panel">
+      <section id="about">
         <div className="wrap">
           <header className="chapter">
             <p className="eyebrow">About</p>
             <h2>About EduVista Global Network</h2>
           </header>
-          <div className="cards">
+          <div className="beliefs">
             {statements.map((item) => (
-              <article className="card" key={item.title}>
+              <article className="belief" key={item.title}>
                 <h3>{item.title}</h3>
                 <p>{item.body}</p>
               </article>
@@ -126,7 +124,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="institutions" className="panel">
+      <section id="institutions">
         <div className="wrap">
           <header className="chapter">
             <p className="eyebrow">Institutions</p>
@@ -137,7 +135,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="contact" className="panel">
+      <section id="contact">
         <div className="wrap">
           <header className="chapter">
             <p className="eyebrow">Contact</p>
@@ -149,55 +147,17 @@ export default function HomePage() {
               <EnquiryForm />
             </div>
             <aside className="contact-side">
-              <div className="contact-card">
-                <p className="eyebrow">Get in touch</p>
-                <p className="org">EduVista Global Network Ltd</p>
-                <p>Nairobi, Kenya. Serving clients worldwide.</p>
-                <div className="contact-links">
-                  <a href={`mailto:${INBOX}`}>{INBOX}</a>
-                  <a href={WEB} rel="noopener noreferrer">
-                    {WEB_LABEL}
-                  </a>
-                  <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
-                    Message us on WhatsApp
-                  </a>
-                </div>
-              </div>
-              <div className="contact-card">
-                <p className="eyebrow">Office hours</p>
-                <p className="zone">East Africa Time</p>
-                <dl className="hours">
-                  {hours.map(([day, time]) => (
-                    <div key={day}>
-                      <dt>{day}</dt>
-                      <dd>{time}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
+              <p className="eyebrow">Office hours</p>
+              <p className="zone">East Africa Time</p>
+              <dl className="hours">
+                {hours.map(([day, time]) => (
+                  <div key={day}>
+                    <dt>{day}</dt>
+                    <dd>{time}</dd>
+                  </div>
+                ))}
+              </dl>
             </aside>
-          </div>
-        </div>
-      </section>
-
-      <section className="closer" aria-labelledby="closer-title">
-        <div className="wrap closer-grid">
-          <div>
-            <h2 id="closer-title">Let’s rise together</h2>
-            <a className="btn" href="#contact">
-              Let’s go
-            </a>
-          </div>
-          <div>
-            <p>
-              Academic and career guidance from the first university choice through institutional
-              research.
-            </p>
-            {/* <div className="closer-letter">
-              <p className="eyebrow">Mailing list</p>
-              <p>Get 10% off your first purchase when you sign up for our newsletter.</p>
-              <Newsletter />
-            </div> */}
           </div>
         </div>
       </section>

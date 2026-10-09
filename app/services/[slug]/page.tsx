@@ -82,16 +82,13 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
 
         <section className="svc-section" aria-labelledby="svc-more">
           <h2 id="svc-more">More {service.audience === "learners" ? "learner" : "institution"} services</h2>
-          <ul className="svc-related">
+          <div className="hero-words">
             {related.map((entry) => (
-              <li key={entry.slug}>
-                <a href={`/services/${entry.slug}`}>
-                  <small>{entry.eyebrow}</small>
-                  {entry.title}
-                </a>
-              </li>
+              <a key={entry.slug} href={`/services/${entry.slug}`}>
+                {entry.eyebrow}
+              </a>
             ))}
-          </ul>
+          </div>
         </section>
       </div>
     </main>
