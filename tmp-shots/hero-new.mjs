@@ -1,0 +1,14 @@
+import puppeteer from "puppeteer-core";
+const browser = await puppeteer.launch({executablePath:"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",headless:true,args:["--hide-scrollbars"]});
+const page = await browser.newPage();
+await page.setViewport({width:1440,height:900});
+await page.goto("http://localhost:3000/",{waitUntil:"networkidle0"});
+await new Promise(r=>setTimeout(r,800));
+await page.mouse.move(1050,450);
+await page.click(".hero-dots button:nth-child(1)");
+await new Promise(r=>setTimeout(r,2000));
+await page.screenshot({path:"tmp-shots/ui/start-inspire.png"});
+await page.click(".hero-dots button:nth-child(3)");
+await new Promise(r=>setTimeout(r,2000));
+await page.screenshot({path:"tmp-shots/ui/start-rise.png"});
+await browser.close();

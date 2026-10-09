@@ -1,20 +1,12 @@
 "use client";
 
-import { FormEvent, useState } from "react";
-import { openDraft } from "@/lib/site";
+import { FormEvent } from "react";
+import { OpenDraft } from "@/components/OpenDraft";
 
 export function Newsletter() {
-  const [opened, setOpened] = useState(false);
-
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const email = String(data.get("email") ?? "");
-    openDraft(
-      "EduVista newsletter signup",
-      `Please add this address to the EduVista mailing list:\n${email}\n\nThis website does not store the signup.`,
-    );
-    setOpened(true);
+    event.currentTarget.querySelector<HTMLAnchorElement>("[data-kind='app']")?.click();
   }
 
   return (
@@ -23,14 +15,13 @@ export function Newsletter() {
         <span>Email</span>
         <input name="email" type="email" autoComplete="email" required />
       </label>
-      <button className="btn" type="submit">
-        Sign up
-      </button>
-      {opened && (
-        <p className="hint" role="status">
-          A draft is opening to info@eduvistaglobalnetwork.org. Send it to join the list.
-        </p>
-      )}
+      <p className="hint">Opens a draft to info@eduvistaglobalnetwork.org. Send it to join the list.</p>
+      <OpenDraft
+        compose={(data) => ({
+          subject: "EduVista newsletter signup",
+          body: `Please add this address to the EduVista mailing list:\n${String(data.get("email") ?? "")}\n\nThis website does not store the signup.`,
+        })}
+      />
     </form>
   );
 }

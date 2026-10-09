@@ -1,5 +1,41 @@
 export type Point = { title: string; body: string };
 
+export type Acronym = {
+  word: string;
+  letters: { letter: string; meaning: string }[];
+};
+
+export const acronyms: Acronym[] = [
+  {
+    word: "I.N.S.P.I.R.E.",
+    letters: [
+      { letter: "I", meaning: "Integrity" },
+      { letter: "N", meaning: "Navigation" },
+      { letter: "S", meaning: "Strategy" },
+      { letter: "P", meaning: "Perspective" },
+      { letter: "R", meaning: "Risk-Awareness" },
+      { letter: "E", meaning: "Excellence" },
+    ],
+  },
+  {
+    word: "M.A.P.",
+    letters: [
+      { letter: "M", meaning: "Maximize Your Performance" },
+      { letter: "A", meaning: "Achieve Career Success" },
+      { letter: "P", meaning: "Plan for the Future" },
+    ],
+  },
+  {
+    word: "R.I.S.E.",
+    letters: [
+      { letter: "R", meaning: "Reach Your Academic Potential" },
+      { letter: "I", meaning: "Ignite Your Global Career" },
+      { letter: "S", meaning: "Soar in Postgraduate Research" },
+      { letter: "E", meaning: "Excel Beyond Borders" },
+    ],
+  },
+];
+
 export type Service = {
   eyebrow: string;
   title: string;
@@ -14,7 +50,7 @@ export const about: Service = {
   eyebrow: "About",
   title: "Crafting futures, cultivating excellence",
   image: "/images/eduvista-about.jpg",
-  alt: "People working together around laptops in a mentoring session.",
+  alt: "Curved library shelves filled with books.",
   lede: [
     "A global academic and career hub: data-driven, integrity-rooted work so every learner thrives.",
   ],
@@ -31,7 +67,7 @@ export const statements = [
   },
   {
     title: "Approach",
-    body: "We offer tailored, data-informed solutions driven by integrity, innovation, and a commitment to global excellence — ensuring every learner thrives and every outcome counts.",
+    body: "We offer tailored, data-informed solutions driven by integrity, innovation, and a commitment to global excellence - ensuring every learner thrives and every outcome counts.",
   },
 ];
 
@@ -61,7 +97,7 @@ export const learners: Service[] = [
     eyebrow: "Academic pathway",
     title: "Advisory and excellence support",
     image: "/images/eduvista-pathway.jpg",
-    alt: "Students collaborating over laptops in a university library.",
+    alt: "A vintage world map marked with pins across the continents.",
     lede: [
       "Guidance from first university choice through postgraduate placement, so students choose well and complete well.",
     ],
@@ -88,7 +124,7 @@ export const learners: Service[] = [
     eyebrow: "STEM",
     title: "Academic mastery tutorials",
     image: "/images/eduvista-stem.jpg",
-    alt: "A student in a lab coat holding a flask beside a microscope.",
+    alt: "A microscope focused on a glass slide.",
     lede: [
       "STEM tutorials that close gaps, build confidence, and keep students on track.",
     ],
@@ -111,7 +147,7 @@ export const learners: Service[] = [
     eyebrow: "Research",
     title: "Postgraduate research excellence",
     image: "/images/eduvista-research.jpg",
-    alt: "A postgraduate student focused on a laptop in a study hall.",
+    alt: "An open notebook, tablet, and cup on a wooden study desk.",
     lede: [
       "Mentorship for master’s and doctoral candidates, from coursework through publication.",
     ],
@@ -138,7 +174,7 @@ export const learners: Service[] = [
     eyebrow: "Coaching",
     title: "Academic coaching",
     image: "/images/eduvista-coaching.jpg",
-    alt: "A small group talking through notes over coffee.",
+    alt: "A chess king standing ahead of the other pieces.",
     lede: [
       "Personal coaching so students set goals, study well, and work through what stalls progress.",
     ],
@@ -169,7 +205,7 @@ export const learners: Service[] = [
     eyebrow: "Careers",
     title: "Career preparedness",
     image: "/images/eduvista-career.jpg",
-    alt: "A diverse team shaking hands after a meeting.",
+    alt: "Glass office towers seen from the street below.",
     lede: [
       "Employability skills and placement support for local and international roles.",
     ],
@@ -194,7 +230,7 @@ export const certification = {
   eyebrow: "Credentials",
   title: "Professional certification",
   image: "/images/eduvista-cert.jpg",
-  alt: "Graduates throwing caps into the air.",
+  alt: "A certificate with a red seal and signatures.",
   lede: [
     "High-impact certifications matched to career goals, with support through enrolment and preparation.",
   ],
@@ -225,7 +261,7 @@ export const consultancy: Service = {
   eyebrow: "Evidence",
   title: "Research consultancy",
   image: "/images/eduvista-field.jpg",
-  alt: "A facilitator leading a workshop with notes on the wall.",
+  alt: "Printed charts and a magnifying glass on a wooden desk.",
   lede: [
     "Programme audits, policy studies, and MEL systems for universities, government, and donor-funded work.",
   ],
@@ -253,7 +289,7 @@ export const polls = {
   eyebrow: "Public voice",
   title: "Polls and public engagement",
   image: "/images/eduvista-polls.jpg",
-  alt: "Two colleagues in a research interview at a conference table.",
+  alt: "Survey sheets and a pencil on an empty classroom desk.",
   lede: [
     "Ethical, statistically robust surveys for political strategy, civic engagement, and service delivery.",
   ],

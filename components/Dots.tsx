@@ -38,7 +38,9 @@ export function Dots() {
           href={`#${section.id}`}
           aria-label={section.label}
           aria-current={active === section.id ? "true" : undefined}
-        />
+        >
+          <span className="dot-label">{section.label}</span>
+        </a>
       ))}
     </nav>
   );

@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
 
 const LINKS = [
+  { href: "/#top", label: "Home" },
   { href: "/#about", label: "About" },
   { href: "/#learners", label: "Learners" },
   { href: "/#institutions", label: "Institutions" },

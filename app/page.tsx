@@ -2,42 +2,23 @@ import { Dots } from "@/components/Dots";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { Hero } from "@/components/Hero";
 import { Newsletter } from "@/components/Newsletter";
-import { ServiceExplorer, type ExplorerItem } from "@/components/ServiceExplorer";
+import { ServiceCards } from "@/components/ServiceCards";
 import {
   aboutClosing,
-  certification,
   commitments,
-  consultancy,
   crafting,
   hours,
-  learners,
-  market,
-  polls,
   statements,
   vision,
 } from "@/lib/content";
+import { institutionServices, learnerServices } from "@/lib/services";
 import { INBOX, WEB, WEB_LABEL, WHATSAPP } from "@/lib/site";
-
-const learnerItems: ExplorerItem[] = [
-  ...learners,
-  {
-    eyebrow: certification.eyebrow,
-    title: certification.title,
-    lede: certification.lede,
-    image: certification.image,
-    alt: certification.alt,
-    rows: certification.rows,
-  },
-];
-
-const institutionItems: ExplorerItem[] = [vision, consultancy, polls, market];
 
 export default function HomePage() {
   return (
     <main>
       <Dots />
       <Hero />
-
       <section className="stage" aria-label="Highlights">
         <div className="wrap">
           <article className="stage-row" id="about">
@@ -45,7 +26,7 @@ export default function HomePage() {
               <p className="eyebrow">About</p>
               <h2>Crafting futures, cultivating excellence</h2>
               <p>
-                Mentorship, research, and global opportunity — excellence as a practice, not a
+                Mentorship, research, and global opportunity - excellence as a practice, not a
                 destination.
               </p>
               <a className="more" href="#about-detail">
@@ -55,7 +36,7 @@ export default function HomePage() {
             <figure className="stage-visual">
               <img
                 src="/images/eduvista-about.jpg"
-                alt="A mentor and students working together at a table."
+                alt="Curved library shelves filled with books."
               />
             </figure>
           </article>
@@ -75,7 +56,7 @@ export default function HomePage() {
             <figure className="stage-visual">
               <img
                 src="/images/eduvista-pathway.jpg"
-                alt="Students collaborating over laptops in a university library."
+                alt="A vintage world map marked with pins across the continents."
               />
             </figure>
           </article>
@@ -117,12 +98,8 @@ export default function HomePage() {
             ))}
           </div>
           <div className="story">
-            <div className="story-lead">
-              <h3>Crafting futures, cultivating excellence</h3>
-              <p>{crafting}</p>
-            </div>
-            <p className="story-kicker">Three commitments</p>
-            <ol className="commitments">
+            
+            {/* <ol className="commitments">
               {commitments.map((item, index) => (
                 <li className="commitment" key={item.lead}>
                   <span className="commitment-num">{String(index + 1).padStart(2, "0")}</span>
@@ -130,10 +107,10 @@ export default function HomePage() {
                   <p>{item.rest}</p>
                 </li>
               ))}
-            </ol>
-            <div className="story-close">
-              <p>{aboutClosing}</p>
-            </div>
+            </ol> */}
+            <blockquote className="story-close">
+              <p>“{aboutClosing}”</p>
+            </blockquote>
           </div>
         </div>
       </section>
@@ -145,7 +122,7 @@ export default function HomePage() {
             <h2>Services for learners</h2>
             <p className="chapter-note">From first university choice through certification.</p>
           </header>
-          <ServiceExplorer label="Learner services" items={learnerItems} />
+          <ServiceCards label="Learner services" items={learnerServices} />
         </div>
       </section>
 
@@ -154,9 +131,9 @@ export default function HomePage() {
           <header className="chapter">
             <p className="eyebrow">Institutions</p>
             <h2>Services for institutions</h2>
-            <p className="chapter-note">Research, polling, and market intelligence.</p>
+            <p className="chapter-note">{vision.lede[0]}</p>
           </header>
-          <ServiceExplorer label="Institution services" items={institutionItems} />
+          <ServiceCards label="Institution services" items={institutionServices} />
         </div>
       </section>
 
@@ -171,29 +148,33 @@ export default function HomePage() {
               <h3>Send us an email</h3>
               <EnquiryForm />
             </div>
-            <aside className="contact-card">
-              <p className="eyebrow">Get in touch</p>
-              <p className="org">EduVista Global Network Ltd</p>
-              <p>Nairobi, Kenya. Serving clients worldwide.</p>
-              <div className="contact-links">
-                <a href={`mailto:${INBOX}`}>{INBOX}</a>
-                <a href={WEB} rel="noopener noreferrer">
-                  {WEB_LABEL}
-                </a>
-                <a href={WHATSAPP} rel="noopener noreferrer">
-                  Message us on WhatsApp
-                </a>
+            <aside className="contact-side">
+              <div className="contact-card">
+                <p className="eyebrow">Get in touch</p>
+                <p className="org">EduVista Global Network Ltd</p>
+                <p>Nairobi, Kenya. Serving clients worldwide.</p>
+                <div className="contact-links">
+                  <a href={`mailto:${INBOX}`}>{INBOX}</a>
+                  <a href={WEB} rel="noopener noreferrer">
+                    {WEB_LABEL}
+                  </a>
+                  <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
+                    Message us on WhatsApp
+                  </a>
+                </div>
               </div>
-              <p className="eyebrow hours-label">Office hours</p>
-              <p className="zone">East Africa Time</p>
-              <dl className="hours">
-                {hours.map(([day, time]) => (
-                  <div key={day}>
-                    <dt>{day}</dt>
-                    <dd>{time}</dd>
-                  </div>
-                ))}
-              </dl>
+              <div className="contact-card">
+                <p className="eyebrow">Office hours</p>
+                <p className="zone">East Africa Time</p>
+                <dl className="hours">
+                  {hours.map(([day, time]) => (
+                    <div key={day}>
+                      <dt>{day}</dt>
+                      <dd>{time}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
             </aside>
           </div>
         </div>
@@ -212,11 +193,11 @@ export default function HomePage() {
               Academic and career guidance from the first university choice through institutional
               research.
             </p>
-            <div className="closer-letter">
+            {/* <div className="closer-letter">
               <p className="eyebrow">Mailing list</p>
               <p>Get 10% off your first purchase when you sign up for our newsletter.</p>
               <Newsletter />
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

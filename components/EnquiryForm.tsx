@@ -1,33 +1,14 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { openDraft } from "@/lib/site";
+import { OpenDraft } from "@/components/OpenDraft";
 
 export function EnquiryForm() {
   const [names, setNames] = useState<string[]>([]);
-  const [opened, setOpened] = useState(false);
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const files = names.length ? names.map((name) => `- ${name}`).join("\n") : "- None listed";
-    const body = [
-      "Appointment request",
-      "",
-      `Name: ${data.get("name")}`,
-      `Email: ${data.get("email")}`,
-      `Enquiring as: ${data.get("audience")}`,
-      "",
-      "Message:",
-      String(data.get("message") ?? ""),
-      "",
-      "Files to attach:",
-      files,
-      "",
-      "Please attach the files in your email app before sending. This website does not store the enquiry.",
-    ].join("\n");
-    openDraft("EduVista appointment request", body);
-    setOpened(true);
+    event.currentTarget.querySelector<HTMLAnchorElement>("[data-kind='app']")?.click();
   }
 
   return (
@@ -72,17 +53,29 @@ export function EnquiryForm() {
         </ul>
       )}
       <p className="hint">
-        File names appear in the draft. Attach the files in your email app before you send.
+        File names appear in the draft. Attach the files before you send. Nothing is stored on this
+        website.
       </p>
-      <button className="btn" type="submit">
-        Open email draft
-      </button>
-      {opened && (
-        <p className="hint" role="status">
-          Your email draft is opening to info@eduvistaglobalnetwork.org. Attach any files there before
-          you send.
-        </p>
-      )}
+      <OpenDraft
+        compose={(data) => ({
+          subject: "EduVista appointment request",
+          body: [
+            "Appointment request",
+            "",
+            `Name: ${data.get("name")}`,
+            `Email: ${data.get("email")}`,
+            `Enquiring as: ${data.get("audience")}`,
+            "",
+            "Message:",
+            String(data.get("message") ?? ""),
+            "",
+            "Files to attach:",
+            names.length ? names.map((name) => `- ${name}`).join("\n") : "- None listed",
+            "",
+            "Please attach the files before sending. This website does not store the enquiry.",
+          ].join("\n"),
+        })}
+      />
     </form>
   );
 }
